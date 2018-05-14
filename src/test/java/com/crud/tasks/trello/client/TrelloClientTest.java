@@ -36,6 +36,7 @@ public class TrelloClientTest {
         when(trelloConfig.getTrelloApiEndPoint()).thenReturn("http://test.com");
         when(trelloConfig.getTrelloAppKey()).thenReturn("test");
         when(trelloConfig.getTrelloToken()).thenReturn("test");
+        when(trelloConfig.getTrelloUsername()).thenReturn("agatarajewska");
     }
 
     @Test
