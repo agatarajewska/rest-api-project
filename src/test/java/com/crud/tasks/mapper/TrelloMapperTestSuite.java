@@ -36,9 +36,9 @@ public class TrelloMapperTestSuite {
         List<TrelloBoardDto> trelloBoardDtoList = trelloMapper.mapToBoardDto(trelloBoards);
 
         //Then
-        Assert.assertEquals(trelloBoardDtoList.get(0).getId(), "testId");
-        Assert.assertEquals(trelloBoardDtoList.get(0).getId(), "testId");
-        Assert.assertEquals(trelloBoardDtoList.get(0).getLists().size(), 2);
+        Assert.assertEquals(trelloBoardDtoList.get(0).getId(), trelloBoards.get(0).getId());
+        Assert.assertEquals(trelloBoardDtoList.get(0).getName(), trelloBoards.get(0).getName());
+        Assert.assertEquals(trelloBoardDtoList.get(0).getLists().size(), trelloBoards.get(0).getLists().size());
     }
 
     @Test
@@ -59,9 +59,9 @@ public class TrelloMapperTestSuite {
         List<TrelloBoard> trelloBoardList = trelloMapper.mapToBoard(trelloBoardsDto);
 
         //Then
-        Assert.assertEquals(trelloBoardList.get(0).getId(), "testId");
-        Assert.assertEquals(trelloBoardList.get(0).getId(), "testId");
-        Assert.assertEquals(trelloBoardList.get(0).getLists().size(), 2);
+        Assert.assertEquals(trelloBoardList.get(0).getId(), trelloBoardsDto.get(0).getId());
+        Assert.assertEquals(trelloBoardList.get(0).getName(), trelloBoardsDto.get(0).getName());
+        Assert.assertEquals(trelloBoardList.get(0).getLists().size(), trelloBoardsDto.get(0).getLists().size());
     }
 
     @Test
@@ -73,8 +73,8 @@ public class TrelloMapperTestSuite {
         TrelloCard trelloCard = trelloMapper.mapToCard(trelloCardDto);
 
         //Then
-        Assert.assertEquals(trelloCard.getName(), "testName");
-        Assert.assertEquals(trelloCard.getPos(), "testPoz");
+        Assert.assertEquals(trelloCard.getName(), trelloCardDto.getName());
+        Assert.assertEquals(trelloCard.getPos(), trelloCardDto.getPos());
 
     }
 
@@ -87,8 +87,8 @@ public class TrelloMapperTestSuite {
         TrelloCardDto trelloCardDto = trelloMapper.mapToCardDto(trelloCard);
 
         //Then
-        Assert.assertEquals(trelloCardDto.getName(), "testName");
-        Assert.assertEquals(trelloCardDto.getPos(), "testPoz");
+        Assert.assertEquals(trelloCardDto.getName(), trelloCard.getName());
+        Assert.assertEquals(trelloCardDto.getPos(), trelloCard.getPos());
     }
 
 }
